@@ -40,6 +40,11 @@ namespace DonorApplicationForm.ViewModels
                 }
 
                 this.itemSelected = value;
+
+                if (PropertyChanged != null)
+                {
+                    this.PropertyChanged(this, new PropertyChangedEventArgs(nameof(itemSelected)));
+                }
             }
         }
 

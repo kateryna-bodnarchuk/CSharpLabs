@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Windows.UI.Xaml;
 
 namespace DonorApplicationForm.ViewModels
 {
@@ -19,6 +20,8 @@ namespace DonorApplicationForm.ViewModels
         public string Title { get; }
 
         internal Gender Value { get; }
+
+        public Visibility FemaleIconVisible { get { return Value == Gender.Female? Visibility.Visible : Visibility.Collapsed; } }
 
         public event PropertyChangedEventHandler PropertyChanged;
     }
