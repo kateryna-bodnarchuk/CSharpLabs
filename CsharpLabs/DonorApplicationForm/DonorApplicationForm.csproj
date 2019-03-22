@@ -126,10 +126,12 @@
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="ViewModels\AddPersonViewModel.cs" />
+    <Compile Include="ViewModels\BloodGroupViewModel.cs" />
     <Compile Include="ViewModels\BloodGroupSelectionViewModel.cs" />
     <Compile Include="ViewModels\GenderSelectionViewModel.cs" />
     <Compile Include="ViewModels\BirthDateViewModel.cs" />
     <Compile Include="ViewModels\ApplicationViewModel.cs" />
+    <Compile Include="ViewModels\GenderViewModel.cs" />
     <Compile Include="ViewModels\PersonViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

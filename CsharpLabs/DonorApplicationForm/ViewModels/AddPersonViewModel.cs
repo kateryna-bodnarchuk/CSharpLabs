@@ -67,8 +67,8 @@ namespace DonorApplicationForm.ViewModels
                 firstName: this.firstName, 
                 lastName: this.lastName, 
                 birthDate: this.BirthDate.Date, 
-                gender: DomainModel.Gender.Male, 
-                group: DomainModel.BloodGroup.II);
+                gender: this.Gender.ItemSelected.Value, 
+                group: this.BloodGroup.ItemSelected.Value);
 
             if (NewPerson != null)
             {

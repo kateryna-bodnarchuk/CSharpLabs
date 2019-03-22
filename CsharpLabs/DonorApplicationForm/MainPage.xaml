@@ -3,6 +3,7 @@
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:DonorApplicationForm"
+    xmlns:ViewModels="using:DonorApplicationForm.ViewModels"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
@@ -23,9 +24,21 @@
                     <TextBlock Text="Add New" Style="{ThemeResource TitleTextBlockStyle}"/>
                     <TextBox Header="First Name" x:Name="FistName" Margin="0,10,0,0" HorizontalAlignment="Stretch" Text="{x:Bind ApplicationModel.AddPerson.FirstName, UpdateSourceTrigger=LostFocus, Mode=TwoWay}" />
                     <TextBox Header="Last Name" x:Name="LastName" Margin="0,10,0,0" HorizontalAlignment="Stretch" Text="{x:Bind ApplicationModel.AddPerson.LastName, UpdateSourceTrigger=LostFocus, Mode=TwoWay}" />
-                    <ComboBox Header="Gender" PlaceholderText="Select" Width="200" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="0,10,0,0" />
-                    <DatePicker Header="Date of Birth" HorizontalAlignment="Left" Margin="0,10,0,0" VerticalAlignment="Center"/>
-                    <ComboBox Header="Blood Group" PlaceholderText="Select" Width="200" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="0,10,0,0" />
+                    <ComboBox Header="Gender" PlaceholderText="Select" Width="200" ItemsSource="{x:Bind ApplicationModel.AddPerson.Gender.ItemList}" SelectedItem="{x:Bind ApplicationModel.AddPerson.Gender.ItemSelected, Mode=TwoWay}" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="0,10,0,0">
+                        <ComboBox.ItemTemplate>
+                            <DataTemplate x:DataType="ViewModels:GenderViewModel">
+                                <TextBlock Text="{x:Bind Title}"/>
+                            </DataTemplate>
+                        </ComboBox.ItemTemplate>
+                    </ComboBox>
+                    <DatePicker Header="Date of Birth" HorizontalAlignment="Left" Margin="0,10,0,0" VerticalAlignment="Center" Date="{x:Bind ApplicationModel.AddPerson.BirthDate.Date, Mode=TwoWay}" MinYear="{x:Bind ApplicationModel.AddPerson.BirthDate.MinValue}" MaxYear="{x:Bind ApplicationModel.AddPerson.BirthDate.MaxValue}"/>
+                    <ComboBox Header="Blood Group" PlaceholderText="Select" Width="200" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="0,10,0,0" ItemsSource="{x:Bind ApplicationModel.AddPerson.BloodGroup.ItemList}" SelectedItem="{x:Bind ApplicationModel.AddPerson.BloodGroup.ItemSelected, Mode=TwoWay}">
+                        <ComboBox.ItemTemplate>
+                            <DataTemplate x:DataType="ViewModels:BloodGroupViewModel">
+                                <TextBlock Text="{x:Bind Title}"/>
+                            </DataTemplate>
+                        </ComboBox.ItemTemplate>
+                    </ComboBox>
                     <Button Width="70" HorizontalAlignment="Right" Margin="0,10,0,0" VerticalAlignment="Top" Click="{x:Bind ApplicationModel.AddPerson.Add}" >Add</Button>
                 </StackPanel>
             </Border>
