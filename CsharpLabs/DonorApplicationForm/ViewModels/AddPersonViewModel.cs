@@ -17,7 +17,7 @@ namespace DonorApplicationForm.ViewModels
         public AddPersonViewModel()
         {
             this.BirthDate = new BirthDateViewModel();
-            this.BloodGroup = new BloodGroupSelectionViewModel();
+            this.BloodGroup = new BloodGroupRequiredSelectionViewModel();
             this.Gender = new GenderSelectionViewModel();
         }
 
@@ -55,7 +55,7 @@ namespace DonorApplicationForm.ViewModels
 
         public BirthDateViewModel BirthDate { get; set; }
         public GenderSelectionViewModel Gender { get; set; }
-        public BloodGroupSelectionViewModel BloodGroup { get; set; }
+        public BloodGroupRequiredSelectionViewModel BloodGroup { get; set; }
 
         public event PropertyChangedEventHandler PropertyChanged;
 

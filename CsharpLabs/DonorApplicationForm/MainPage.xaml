@@ -37,7 +37,7 @@
                     <DatePicker Header="Date of Birth" HorizontalAlignment="Left" Margin="0,10,0,0" VerticalAlignment="Center" Date="{x:Bind ApplicationModel.AddPerson.BirthDate.Date, Mode=TwoWay}" MinYear="{x:Bind ApplicationModel.AddPerson.BirthDate.MinValue}" MaxYear="{x:Bind ApplicationModel.AddPerson.BirthDate.MaxValue}"/>
                     <ComboBox Header="Blood Group" PlaceholderText="Select" Width="200" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="0,10,0,0" ItemsSource="{x:Bind ApplicationModel.AddPerson.BloodGroup.ItemList}" SelectedItem="{x:Bind ApplicationModel.AddPerson.BloodGroup.ItemSelected, Mode=TwoWay}">
                         <ComboBox.ItemTemplate>
-                            <DataTemplate x:DataType="DonorApplicationForm_ViewModels:BloodGroupViewModel">
+                            <DataTemplate x:DataType="DonorApplicationForm_ViewModels:BloodGroupRequiredViewModel">
                                 <StackPanel Orientation="Horizontal">
                                     <TextBlock Text="{x:Bind Title}"/>
                                 </StackPanel>
@@ -57,17 +57,27 @@
                 <StackPanel>
                     <StackPanel Orientation="Horizontal">
                         <TextBlock Text="Donors count:" Style="{ThemeResource TitleTextBlockStyle}"/>
-                        <TextBlock Text="{x:Bind ApplicationModel.Items.Count, Mode=OneWay}" Style="{ThemeResource TitleTextBlockStyle}"/>
+                        <TextBlock Text="{x:Bind ApplicationModel.DonorsList.Count, Mode=OneWay}" Style="{ThemeResource TitleTextBlockStyle}"/>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal">
-                        <TextBlock Text="Filter:" VerticalAlignment="Center" Margin="0,0,5,0"/>
-                        <TextBox />
+                        <TextBox  Header="Name" Width="100" Text="{x:Bind ApplicationModel.DonorsList.NameFilter, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                        <ComboBox Header="Blood Group" Margin="20,0,0,0" ItemsSource="{x:Bind ApplicationModel.DonorsList.BloodGroupFilter.ItemList}" SelectedItem="{x:Bind ApplicationModel.DonorsList.BloodGroupFilter.ItemSelected, Mode=TwoWay}" DisplayMemberPath="Title"/>
                     </StackPanel>
                     <ListView>
                         
                     </ListView>
                 </StackPanel>
-                
+                <ContentControl Grid.Row="1">
+                    <ListView ItemsSource="{x:Bind ApplicationModel.DonorsList.Items, Mode=OneWay}">
+                        <ListView.ItemTemplate>
+                            <DataTemplate x:DataType="DonorApplicationForm_ViewModels:PersonViewModel">
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="{x:Bind Title}"/>
+                                </StackPanel>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </ContentControl>
             </Grid>
         </Grid>
     </Grid>

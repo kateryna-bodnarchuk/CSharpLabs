@@ -8,19 +8,16 @@ using System.Threading.Tasks;
 
 namespace DonorApplicationForm.ViewModels
 {
-    public sealed class BloodGroupSelectionViewModel : INotifyPropertyChanged
+    public sealed class BloodGroupRequiredSelectionViewModel : INotifyPropertyChanged
     {
-        private BloodGroupViewModel itemSelected;
+        private BloodGroupRequiredViewModel itemSelected;
 
-        public BloodGroupSelectionViewModel()
+        public BloodGroupRequiredSelectionViewModel()
         {
-            this.ItemList = new[]
-            {
-                new BloodGroupViewModel("I (First)", BloodGroup.I),
-                new BloodGroupViewModel("II (Second)", BloodGroup.II),
-                new BloodGroupViewModel("III (Third)", BloodGroup.III),
-                new BloodGroupViewModel("IV (Fourth)", BloodGroup.IV),
-            };
+            this.ItemList = BloodGroupPresentationLogic
+                .GetAllTitles()
+                .Select(i => new BloodGroupRequiredViewModel(i.title, i.group))
+                .ToList();
 
             var mostPopularGroupFroUserSelection = BloodGroup.II;
             this.itemSelected = ItemList
@@ -28,9 +25,9 @@ namespace DonorApplicationForm.ViewModels
                 .Single();
         }
 
-        public IReadOnlyCollection<BloodGroupViewModel> ItemList { get; }
+        public IReadOnlyCollection<BloodGroupRequiredViewModel> ItemList { get; }
 
-        public BloodGroupViewModel ItemSelected
+        public BloodGroupRequiredViewModel ItemSelected
         {
             get { return this.itemSelected; }
             set

@@ -16,18 +16,17 @@ namespace DonorApplicationForm.ViewModels
             this.AddPerson = new AddPersonViewModel();
             this.AddPerson.NewPerson += OnNewPerson;
 
-            this.Items = new ObservableCollection<PersonViewModel>();
+            this.DonorsList = new DonorsListViewModel();
         }
 
         private void OnNewPerson(Person person)
         {
-            var newPersonViewModel = new PersonViewModel(person);
-            this.Items.Add(newPersonViewModel);
+            this.DonorsList.Add(person);
         }
 
         public AddPersonViewModel AddPerson { get; }
 
-        public ObservableCollection<PersonViewModel> Items { get; }
+        public DonorsListViewModel DonorsList { get; }
 
         public event PropertyChangedEventHandler PropertyChanged;
     }

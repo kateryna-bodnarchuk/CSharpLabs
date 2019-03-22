@@ -8,9 +8,9 @@ using System.Threading.Tasks;
 
 namespace DonorApplicationForm.ViewModels
 {
-    public sealed class BloodGroupViewModel : INotifyPropertyChanged
+    public sealed class BloodGroupRequiredViewModel : INotifyPropertyChanged
     {
-        public BloodGroupViewModel(string title, BloodGroup value)
+        public BloodGroupRequiredViewModel(string title, BloodGroup value)
         {
             this.Title = title;
             this.Value = value;

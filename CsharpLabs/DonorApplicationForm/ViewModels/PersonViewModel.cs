@@ -10,51 +10,20 @@ namespace DonorApplicationForm.ViewModels
 {
     public class PersonViewModel : INotifyPropertyChanged
     {
-        private readonly Person person;
-
         public PersonViewModel(Person person)
         {
-            this.person = person;
-            this.Age = new BirthDateViewModel();
-            this.BloodGroup = new BloodGroupSelectionViewModel();
-            this.Gender = new GenderSelectionViewModel();
+            this.Data = person;
         }
 
-        public string FirstName
+        internal Person Data { get; }
+
+        public string Title
         {
             get
             {
-                return this.person.FirstName;
-            }
-            set
-            {
-                this.person.FirstName = value;
-                if (this.PropertyChanged != null)
-                {
-                    this.PropertyChanged(this, new PropertyChangedEventArgs(nameof(FirstName)));
-                }
+                return $"{this.Data.FirstName} {Data.LastName} | Group: {this.Data.Group.ToString()}";
             }
         }
-
-        public string LastName
-        {
-            get
-            {
-                return this.person.LastName;
-            }
-            set
-            {
-                this.person.LastName = value;
-                if (this.PropertyChanged != null)
-                {
-                    this.PropertyChanged(this, new PropertyChangedEventArgs(nameof(LastName)));
-                }
-            }
-        }
-
-        public BirthDateViewModel Age { get; set; }
-        public GenderSelectionViewModel Gender { get; set; }
-        public BloodGroupSelectionViewModel BloodGroup { get; set; }
 
         public event PropertyChangedEventHandler PropertyChanged;
     }

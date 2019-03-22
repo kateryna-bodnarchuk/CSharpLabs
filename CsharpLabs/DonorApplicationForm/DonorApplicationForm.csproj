@@ -126,8 +126,12 @@
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="ViewModels\AddPersonViewModel.cs" />
-    <Compile Include="ViewModels\BloodGroupViewModel.cs" />
-    <Compile Include="ViewModels\BloodGroupSelectionViewModel.cs" />
+    <Compile Include="ViewModels\BloodGroupOptionalViewModel.cs" />
+    <Compile Include="ViewModels\BloodGroupPresentationLogic.cs" />
+    <Compile Include="ViewModels\BloodGroupOptionalSelectionViewModel.cs" />
+    <Compile Include="ViewModels\BloodGroupRequiredViewModel.cs" />
+    <Compile Include="ViewModels\BloodGroupRequiredSelectionViewModel.cs" />
+    <Compile Include="ViewModels\DonorsListViewModel.cs" />
     <Compile Include="ViewModels\GenderSelectionViewModel.cs" />
     <Compile Include="ViewModels\BirthDateViewModel.cs" />
     <Compile Include="ViewModels\ApplicationViewModel.cs" />
@@ -165,6 +169,9 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform">
       <Version>6.2.3</Version>
+    </PackageReference>
+    <PackageReference Include="System.ValueTuple">
+      <Version>4.5.0</Version>
     </PackageReference>
   </ItemGroup>
   <ItemGroup />
