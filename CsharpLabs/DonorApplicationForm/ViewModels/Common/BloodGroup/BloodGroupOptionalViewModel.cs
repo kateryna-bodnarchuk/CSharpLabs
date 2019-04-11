@@ -12,7 +12,7 @@ namespace DonorApplicationForm.ViewModels
     /// Презентаційна модель аналогічна до <see cref="BloodGroupRequiredViewModel"/>
     /// за винятком того, що група крові дозволяє нул.
     /// </summary>
-    public sealed class BloodGroupOptionalViewModel : INotifyPropertyChanged
+    public sealed class BloodGroupOptionalViewModel
     {
         public BloodGroupOptionalViewModel(string title, BloodGroup? value)
         {
@@ -24,6 +24,5 @@ namespace DonorApplicationForm.ViewModels
 
         internal BloodGroup? Value { get; }
 
-        public event PropertyChangedEventHandler PropertyChanged;
     }
 }

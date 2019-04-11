@@ -121,22 +121,26 @@
     </Compile>
     <Compile Include="DomainModel\BloodGroup.cs" />
     <Compile Include="DomainModel\Gender.cs" />
+    <Compile Include="DomainModel\IPerson.cs" />
+    <Compile Include="DomainModel\MonostatePerson.cs" />
     <Compile Include="DomainModel\Person.cs" />
+    <Compile Include="DomainModel\PersonNameComparer.cs" />
+    <Compile Include="DomainModel\PersonSort.cs" />
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ViewModels\AddPersonViewModel.cs" />
-    <Compile Include="ViewModels\BloodGroupOptionalViewModel.cs" />
-    <Compile Include="ViewModels\BloodGroupPresentationLogic.cs" />
-    <Compile Include="ViewModels\BloodGroupOptionalSelectionViewModel.cs" />
-    <Compile Include="ViewModels\BloodGroupRequiredViewModel.cs" />
-    <Compile Include="ViewModels\BloodGroupRequiredSelectionViewModel.cs" />
-    <Compile Include="ViewModels\DonorsListViewModel.cs" />
-    <Compile Include="ViewModels\GenderSelectionViewModel.cs" />
-    <Compile Include="ViewModels\BirthDateViewModel.cs" />
+    <Compile Include="ViewModels\AddPersonModels\AddPersonViewModel.cs" />
+    <Compile Include="ViewModels\Common\BloodGroup\BloodGroupOptionalViewModel.cs" />
+    <Compile Include="ViewModels\Common\BloodGroup\BloodGroupPresentationLogic.cs" />
+    <Compile Include="ViewModels\Common\BloodGroup\BloodGroupOptionalSelectionViewModel.cs" />
+    <Compile Include="ViewModels\Common\BloodGroup\BloodGroupRequiredViewModel.cs" />
+    <Compile Include="ViewModels\Common\BloodGroup\BloodGroupRequiredSelectionViewModel.cs" />
+    <Compile Include="ViewModels\DonorsListModels\DonorsListViewModel.cs" />
+    <Compile Include="ViewModels\Common\Gender\GenderSelectionViewModel.cs" />
+    <Compile Include="ViewModels\Common\BirthDateViewModel.cs" />
     <Compile Include="ViewModels\ApplicationViewModel.cs" />
-    <Compile Include="ViewModels\GenderViewModel.cs" />
-    <Compile Include="ViewModels\PersonViewModel.cs" />
+    <Compile Include="ViewModels\Common\Gender\GenderViewModel.cs" />
+    <Compile Include="ViewModels\DonorsListModels\PersonViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

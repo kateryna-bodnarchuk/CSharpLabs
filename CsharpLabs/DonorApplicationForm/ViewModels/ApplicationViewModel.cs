@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace DonorApplicationForm.ViewModels
 {
-    public sealed class ApplicationViewModel : INotifyPropertyChanged
+    public sealed class ApplicationViewModel
     {
         public ApplicationViewModel()
         {
@@ -27,7 +27,5 @@ namespace DonorApplicationForm.ViewModels
         public AddPersonViewModel AddPerson { get; }
 
         public DonorsListViewModel DonorsList { get; }
-
-        public event PropertyChangedEventHandler PropertyChanged;
     }
 }

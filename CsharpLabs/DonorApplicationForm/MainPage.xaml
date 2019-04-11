@@ -2,7 +2,6 @@
     x:Class="DonorApplicationForm.MainPage"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="using:DonorApplicationForm"
     xmlns:DonorApplicationForm_ViewModels="using:DonorApplicationForm.ViewModels"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
@@ -63,9 +62,6 @@
                         <TextBox  Header="Name" Width="100" Text="{x:Bind ApplicationModel.DonorsList.NameFilter, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
                         <ComboBox Header="Blood Group" Margin="20,0,0,0" ItemsSource="{x:Bind ApplicationModel.DonorsList.BloodGroupFilter.ItemList}" SelectedItem="{x:Bind ApplicationModel.DonorsList.BloodGroupFilter.ItemSelected, Mode=TwoWay}" DisplayMemberPath="Title"/>
                     </StackPanel>
-                    <ListView>
-                        
-                    </ListView>
                 </StackPanel>
                 <ContentControl Grid.Row="1">
                     <ListView ItemsSource="{x:Bind ApplicationModel.DonorsList.Items, Mode=OneWay}">

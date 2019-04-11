@@ -22,7 +22,7 @@ namespace DonorApplicationForm.ViewModels
             this.itemSelected = ItemList.First();
         }
 
-        public IReadOnlyCollection<GenderViewModel> ItemList { get; }
+        public GenderViewModel[] ItemList { get; }
 
         public GenderViewModel ItemSelected
         {

@@ -72,7 +72,7 @@ namespace DonorApplicationForm.ViewModels
         {
             IEnumerable<PersonViewModel> source = this.items;
 
-            if (!string.IsNullOrWhiteSpace(this.NameFilter))
+            if (this.NameFilter.Trim().Length > 0)
             {
                 string nameFilterTrimmed = this.NameFilter.Trim();
                 source = source.Where(
@@ -83,10 +83,10 @@ namespace DonorApplicationForm.ViewModels
                 );
             }
 
-            BloodGroup? bloodBroupFilter = this.BloodGroupFilter.GetValue();
-            if (bloodBroupFilter.HasValue)
+            BloodGroup? bloodGroupFilter = this.BloodGroupFilter.GetValue();
+            if (bloodGroupFilter.HasValue)
             {
-                source = source.Where(i => i.Data.Group == bloodBroupFilter.Value);
+                source = source.Where(i => i.Data.Group == bloodGroupFilter.Value);
             }
 
             return source.OrderBy(i => i.Data.FirstName).ThenBy(i => i.Data.LastName);

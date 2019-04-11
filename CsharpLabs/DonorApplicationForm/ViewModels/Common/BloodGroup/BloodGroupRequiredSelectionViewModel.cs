@@ -8,24 +8,25 @@ using System.Threading.Tasks;
 
 namespace DonorApplicationForm.ViewModels
 {
-    public sealed class BloodGroupRequiredSelectionViewModel : INotifyPropertyChanged
+    public sealed class BloodGroupRequiredSelectionViewModel
     {
         private BloodGroupRequiredViewModel itemSelected;
 
         public BloodGroupRequiredSelectionViewModel()
         {
-            this.ItemList = BloodGroupPresentationLogic
+            this.ItemList = 
+                BloodGroupPresentationLogic
                 .GetAllTitles()
                 .Select(i => new BloodGroupRequiredViewModel(i.title, i.group))
-                .ToList();
+                .ToArray();
 
-            var mostPopularGroupFroUserSelection = BloodGroup.II;
+            var mostPopularGroupForUserSelection = BloodGroup.II;
             this.itemSelected = ItemList
-                .Where(i => i.Value == mostPopularGroupFroUserSelection)
+                .Where(i => i.Value == mostPopularGroupForUserSelection)
                 .Single();
         }
 
-        public IReadOnlyCollection<BloodGroupRequiredViewModel> ItemList { get; }
+        public BloodGroupRequiredViewModel[] ItemList { get; }
 
         public BloodGroupRequiredViewModel ItemSelected
         {
@@ -37,6 +38,11 @@ namespace DonorApplicationForm.ViewModels
                     throw new ArgumentNullException();
                 }
 
+                if (!ItemList.Contains(value))
+                {
+                    throw new ArgumentException("Strange item passed.");
+                }
+
                 if (this.itemSelected == value)
                 {
                     return;
@@ -45,7 +51,5 @@ namespace DonorApplicationForm.ViewModels
                 this.itemSelected = value;
             }
         }
-
-        public event PropertyChangedEventHandler PropertyChanged;
     }
 }

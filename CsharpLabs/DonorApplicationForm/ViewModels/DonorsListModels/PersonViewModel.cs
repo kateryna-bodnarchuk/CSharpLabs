@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace DonorApplicationForm.ViewModels
 {
-    public class PersonViewModel : INotifyPropertyChanged
+    public class PersonViewModel
     {
         public PersonViewModel(Person person)
         {
@@ -24,7 +24,5 @@ namespace DonorApplicationForm.ViewModels
                 return $"{this.Data.FirstName} {Data.LastName} | Group: {this.Data.Group.ToString()}";
             }
         }
-
-        public event PropertyChangedEventHandler PropertyChanged;
     }
 }

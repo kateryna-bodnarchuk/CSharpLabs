@@ -8,14 +8,14 @@ using System.Threading.Tasks;
 
 namespace DonorApplicationForm.ViewModels
 {
-    public sealed class BloodGroupOptionalSelectionViewModel : INotifyPropertyChanged
+    public sealed class BloodGroupOptionalSelectionViewModel
     {
         private BloodGroupOptionalViewModel itemSelected;
 
         public BloodGroupOptionalSelectionViewModel()
         {
             this.ItemList = new List<BloodGroupOptionalViewModel>();
-            var allCase = new BloodGroupOptionalViewModel("-- All --", null);
+            var allCase = new BloodGroupOptionalViewModel("-- All --", new Nullable<BloodGroup>());
             this.ItemList.Add(allCase);
             this.ItemList.AddRange(
                 BloodGroupPresentationLogic
@@ -58,7 +58,5 @@ namespace DonorApplicationForm.ViewModels
         }
 
         public event Action ItemSelectedChanged;
-
-        public event PropertyChangedEventHandler PropertyChanged;
     }
 }

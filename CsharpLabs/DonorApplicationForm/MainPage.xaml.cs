@@ -23,23 +23,13 @@ namespace DonorApplicationForm
     /// </summary>
     public sealed partial class MainPage : Page
     {
-        private ApplicationViewModel viewModel;
+        private readonly ApplicationViewModel ApplicationModel;
 
         public MainPage()
         {
             this.InitializeComponent();
 
-            this.viewModel = new ApplicationViewModel();
-        }
-
-        public ApplicationViewModel ApplicationModel
-        {
-            get { return this.viewModel; }
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-
+            this.ApplicationModel = new ApplicationViewModel();
         }
     }
 }
