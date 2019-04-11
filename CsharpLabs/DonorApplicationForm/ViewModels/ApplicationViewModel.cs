@@ -14,7 +14,7 @@ namespace DonorApplicationForm.ViewModels
         public ApplicationViewModel()
         {
             this.AddPerson = new AddPersonViewModel();
-            this.AddPerson.NewPerson += OnNewPerson;
+            this.AddPerson.NewPerson += new Action<Person>(OnNewPerson);
 
             this.DonorsList = new DonorsListViewModel();
         }

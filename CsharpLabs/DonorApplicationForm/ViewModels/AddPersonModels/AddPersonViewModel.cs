@@ -59,7 +59,19 @@ namespace DonorApplicationForm.ViewModels
 
         public event PropertyChangedEventHandler PropertyChanged;
 
-        public event Action<Person> NewPerson;
+        private Action<Person> newPerson;
+
+        public event Action<Person> NewPerson
+        {
+            add
+            {
+                this.newPerson += value;
+            }
+            remove
+            {
+                this.newPerson -= value;
+            }
+        }
 
         public void Add(object sender, RoutedEventArgs e)
         {
@@ -70,9 +82,9 @@ namespace DonorApplicationForm.ViewModels
                 gender: this.Gender.ItemSelected.Value, 
                 group: this.BloodGroup.ItemSelected.Value);
 
-            if (NewPerson != null)
+            if (this.newPerson != null)
             {
-                NewPerson(newPerson);
+                this.newPerson.Invoke(newPerson);
             }
 
             this.FirstName = string.Empty;

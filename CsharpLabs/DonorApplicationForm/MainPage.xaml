@@ -68,7 +68,10 @@
                         <ListView.ItemTemplate>
                             <DataTemplate x:DataType="DonorApplicationForm_ViewModels:PersonViewModel">
                                 <StackPanel Orientation="Horizontal">
-                                    <TextBlock Text="{x:Bind Title}"/>
+                                    <TextBlock Text="{x:Bind Title}" VerticalAlignment="Center"/>
+                                    <Button Margin="5,0,0,0" Click="{x:Bind Remove}">
+                                        <Image Source="/Images/icons8-cancel-32.png" Width="16" Height="16" />
+                                    </Button>
                                 </StackPanel>
                             </DataTemplate>
                         </ListView.ItemTemplate>

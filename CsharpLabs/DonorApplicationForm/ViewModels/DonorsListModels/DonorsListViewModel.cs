@@ -53,9 +53,22 @@ namespace DonorApplicationForm.ViewModels
 
         internal void Add(Person person)
         {
-            var newPersonViewModel = new PersonViewModel(person);
+            PersonViewModel newPersonViewModel = NewPersonViewModel(person);
             this.items.Add(newPersonViewModel);
 
+            OnItemsChanged();
+        }
+
+        private PersonViewModel NewPersonViewModel(Person person)
+        {
+            var model = new PersonViewModel(person);
+            model.Removing += new Action<PersonViewModel>(OnItemRemoving);
+            return model;
+        }
+
+        private void OnItemRemoving(PersonViewModel item)
+        {
+            this.items.Remove(item);
             OnItemsChanged();
         }
 
