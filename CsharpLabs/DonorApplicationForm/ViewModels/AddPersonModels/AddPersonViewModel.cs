@@ -76,6 +76,7 @@ namespace DonorApplicationForm.ViewModels
         public void Add(object sender, RoutedEventArgs e)
         {
             var newPerson = new Person(
+                id: Guid.NewGuid(),
                 firstName: this.firstName, 
                 lastName: this.lastName, 
                 birthDate: this.BirthDate.Date, 

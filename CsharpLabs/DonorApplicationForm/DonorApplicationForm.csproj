@@ -119,6 +119,9 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="DataAccess\DonorRepository.cs" />
+    <Compile Include="DataAccess\DonorRepositoryMock.cs" />
+    <Compile Include="DataAccess\IDonorRepository.cs" />
     <Compile Include="DomainModel\BloodGroup.cs" />
     <Compile Include="DomainModel\Gender.cs" />
     <Compile Include="DomainModel\IPerson.cs" />

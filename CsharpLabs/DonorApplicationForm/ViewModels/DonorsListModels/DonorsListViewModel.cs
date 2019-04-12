@@ -4,18 +4,19 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DonorApplicationForm.DataAccess;
 using DonorApplicationForm.DomainModel;
 
 namespace DonorApplicationForm.ViewModels
 {
     public sealed class DonorsListViewModel : INotifyPropertyChanged
     {
-        private List<PersonViewModel> items;
+        private readonly IDonorRepository donorRepository;
         private string nameFilter = string.Empty;
 
         public DonorsListViewModel()
         {
-            this.items = new List<PersonViewModel>();
+            this.donorRepository = new DonorRepositoryMock();
             this.BloodGroupFilter = new BloodGroupOptionalSelectionViewModel();
             this.BloodGroupFilter.ItemSelectedChanged += OnItemsChanged;
         }
@@ -53,8 +54,7 @@ namespace DonorApplicationForm.ViewModels
 
         internal void Add(Person person)
         {
-            PersonViewModel newPersonViewModel = NewPersonViewModel(person);
-            this.items.Add(newPersonViewModel);
+            this.donorRepository.AddPerson(person);
 
             OnItemsChanged();
         }
@@ -68,7 +68,7 @@ namespace DonorApplicationForm.ViewModels
 
         private void OnItemRemoving(PersonViewModel item)
         {
-            this.items.Remove(item);
+            this.donorRepository.Remove(item.Data.Id);
             OnItemsChanged();
         }
 
@@ -83,7 +83,8 @@ namespace DonorApplicationForm.ViewModels
 
         private IEnumerable<PersonViewModel> GetFilteredList()
         {
-            IEnumerable<PersonViewModel> source = this.items;
+            IEnumerable<PersonViewModel> source = this.donorRepository.GetPersonList()
+                .Select(NewPersonViewModel);
 
             if (this.NameFilter.Trim().Length > 0)
             {
