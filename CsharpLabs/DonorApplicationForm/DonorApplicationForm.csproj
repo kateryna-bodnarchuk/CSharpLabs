@@ -119,10 +119,13 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="DataAccess\DonationRepositoryMock.cs" />
     <Compile Include="DataAccess\DonorRepository.cs" />
     <Compile Include="DataAccess\DonorRepositoryMock.cs" />
+    <Compile Include="DataAccess\IDonationRepository.cs" />
     <Compile Include="DataAccess\IDonorRepository.cs" />
     <Compile Include="DomainModel\BloodGroup.cs" />
+    <Compile Include="DomainModel\DonationRecord.cs" />
     <Compile Include="DomainModel\Gender.cs" />
     <Compile Include="DomainModel\IPerson.cs" />
     <Compile Include="DomainModel\MonostatePerson.cs" />
@@ -138,12 +141,15 @@
     <Compile Include="ViewModels\Common\BloodGroup\BloodGroupOptionalSelectionViewModel.cs" />
     <Compile Include="ViewModels\Common\BloodGroup\BloodGroupRequiredViewModel.cs" />
     <Compile Include="ViewModels\Common\BloodGroup\BloodGroupRequiredSelectionViewModel.cs" />
+    <Compile Include="ViewModels\DonorsListModels\AddDonorRecordViewModel.cs" />
+    <Compile Include="ViewModels\DonorsListModels\DonationListViewModel.cs" />
+    <Compile Include="ViewModels\DonorsListModels\DonationViewModel.cs" />
     <Compile Include="ViewModels\DonorsListModels\DonorsListViewModel.cs" />
     <Compile Include="ViewModels\Common\Gender\GenderSelectionViewModel.cs" />
     <Compile Include="ViewModels\Common\BirthDateViewModel.cs" />
     <Compile Include="ViewModels\ApplicationViewModel.cs" />
     <Compile Include="ViewModels\Common\Gender\GenderViewModel.cs" />
-    <Compile Include="ViewModels\DonorsListModels\PersonViewModel.cs" />
+    <Compile Include="PersonViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

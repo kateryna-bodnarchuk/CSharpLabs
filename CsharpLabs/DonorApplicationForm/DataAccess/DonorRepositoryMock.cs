@@ -28,7 +28,7 @@ namespace DonorApplicationForm.DataAccess
         public void AddPerson(Person person)
         {
             items.Add(
-                new Person(person.Id, person.FirstName, person.LastName, person.BirthDate, person.Gender, person.Group)
+                new Person(person.PersonId, person.FirstName, person.LastName, person.BirthDate, person.Gender, person.Group)
                 );
         }
 
@@ -41,7 +41,7 @@ namespace DonorApplicationForm.DataAccess
         {
             for (int i = 0; i < items.Count; i++)
             {
-                if (items[i].Id == personId)
+                if (items[i].PersonId == personId)
                 {
                     items.RemoveAt(i);
                     return;
@@ -54,7 +54,7 @@ namespace DonorApplicationForm.DataAccess
             for (int i = 0; i < items.Count; i++)
             {
                 var item = items[i];
-                if (item.Id == personId)
+                if (item.PersonId == personId)
                 {
                     item.FirstName = fistName;
                     item.LastName = lastName;

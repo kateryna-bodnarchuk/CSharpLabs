@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using DonorApplicationForm.DataAccess;
 using DonorApplicationForm.DomainModel;
+using Windows.UI.Xaml;
 
 namespace DonorApplicationForm.ViewModels
 {
@@ -13,23 +14,56 @@ namespace DonorApplicationForm.ViewModels
     {
         private readonly IDonorRepository donorRepository;
         private string nameFilter = string.Empty;
+        private List<PersonViewModel> itemsFiltered;
+        private PersonViewModel itemSelected;
 
         public DonorsListViewModel()
         {
             this.donorRepository = new DonorRepositoryMock();
             this.BloodGroupFilter = new BloodGroupOptionalSelectionViewModel();
-            this.BloodGroupFilter.ItemSelectedChanged += OnItemsChanged;
+            this.BloodGroupFilter.ItemSelectedChanged += UpdateItemsFiltered;
+            UpdateItemsFiltered();
         }
 
         public IEnumerable<PersonViewModel> Items
         {
             get
             {
-                return GetFilteredList();
+                return itemsFiltered;
             }
         }
 
-        public int Count { get { return GetFilteredList().Count(); } }
+        public PersonViewModel ItemSelected
+        {
+            get
+            {
+                return itemSelected;
+            }
+            set
+            {
+                if (itemSelected == value) return;
+
+                itemSelected = value;
+                if(PropertyChanged != null)
+                {
+                    this.PropertyChanged(this, new PropertyChangedEventArgs(nameof(ItemSelected)));
+                    this.PropertyChanged(this, new PropertyChangedEventArgs(nameof(ItemSelectedVisibility)));
+                }
+            }
+        }
+
+        public Visibility ItemSelectedVisibility
+        {
+            get
+            {
+                if (itemSelected == null) return Visibility.Collapsed;
+                else return Visibility.Visible;
+            }
+        }
+
+
+
+        public int Count { get { return itemsFiltered.Count(); } }
 
         public string NameFilter
         {
@@ -44,7 +78,7 @@ namespace DonorApplicationForm.ViewModels
                     this.PropertyChanged(this, new PropertyChangedEventArgs(nameof(NameFilter)));
                 }
 
-                OnItemsChanged();
+                UpdateItemsFiltered();
             }
         }
 
@@ -56,7 +90,7 @@ namespace DonorApplicationForm.ViewModels
         {
             this.donorRepository.AddPerson(person);
 
-            OnItemsChanged();
+            UpdateItemsFiltered();
         }
 
         private PersonViewModel NewPersonViewModel(Person person)
@@ -68,12 +102,14 @@ namespace DonorApplicationForm.ViewModels
 
         private void OnItemRemoving(PersonViewModel item)
         {
-            this.donorRepository.Remove(item.Data.Id);
-            OnItemsChanged();
+            this.donorRepository.Remove(item.Data.PersonId);
+            UpdateItemsFiltered();
         }
 
-        private void OnItemsChanged()
+        private void UpdateItemsFiltered()
         {
+            this.itemsFiltered = GetFilteredList().ToList();
+
             if (this.PropertyChanged != null)
             {
                 this.PropertyChanged(this, new PropertyChangedEventArgs(nameof(Items)));

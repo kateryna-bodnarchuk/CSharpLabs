@@ -14,6 +14,7 @@ namespace DonorApplicationForm.ViewModels
         public PersonViewModel(Person person)
         {
             this.Data = person;
+            this.Donations = new DonationListViewModel(person.PersonId);
         }
 
         internal Person Data { get; }
@@ -25,6 +26,7 @@ namespace DonorApplicationForm.ViewModels
                 return $"{this.Data.FirstName} {Data.LastName} | Group: {this.Data.Group.ToString()}";
             }
         }
+        public DonationListViewModel Donations { get; }
         public event Action<PersonViewModel> Removing;
 
         public void Remove(object sender, RoutedEventArgs e)

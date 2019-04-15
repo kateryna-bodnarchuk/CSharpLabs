@@ -8,7 +8,7 @@ namespace DonorApplicationForm.DomainModel
 {
     public class Person : IPerson
     {
-        public Guid Id { get; }
+        public Guid PersonId { get; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public DateTimeOffset BirthDate { get; set; }
@@ -17,14 +17,14 @@ namespace DonorApplicationForm.DomainModel
 
 
         public Person(
-            Guid id,
+            Guid personId,
             string firstName, 
             string lastName,
             DateTimeOffset birthDate,
             Gender gender, 
             BloodGroup group)
         {
-            Id = id;
+            PersonId = personId;
             FirstName = firstName;
             LastName = lastName;
             BirthDate = birthDate;
