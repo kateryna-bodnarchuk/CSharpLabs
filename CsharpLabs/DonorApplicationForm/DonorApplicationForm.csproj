@@ -142,8 +142,8 @@
     <Compile Include="ViewModels\Common\BloodGroup\BloodGroupRequiredViewModel.cs" />
     <Compile Include="ViewModels\Common\BloodGroup\BloodGroupRequiredSelectionViewModel.cs" />
     <Compile Include="ViewModels\DonorsListModels\AddDonorRecordViewModel.cs" />
-    <Compile Include="ViewModels\DonorsListModels\DonationListViewModel.cs" />
-    <Compile Include="ViewModels\DonorsListModels\DonationViewModel.cs" />
+    <Compile Include="ViewModels\DonorsListModels\Donations\DonationListViewModel.cs" />
+    <Compile Include="ViewModels\DonorsListModels\Donations\DonationViewModel.cs" />
     <Compile Include="ViewModels\DonorsListModels\DonorsListViewModel.cs" />
     <Compile Include="ViewModels\Common\Gender\GenderSelectionViewModel.cs" />
     <Compile Include="ViewModels\Common\BirthDateViewModel.cs" />
