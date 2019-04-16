@@ -141,7 +141,7 @@
     <Compile Include="ViewModels\Common\BloodGroup\BloodGroupOptionalSelectionViewModel.cs" />
     <Compile Include="ViewModels\Common\BloodGroup\BloodGroupRequiredViewModel.cs" />
     <Compile Include="ViewModels\Common\BloodGroup\BloodGroupRequiredSelectionViewModel.cs" />
-    <Compile Include="ViewModels\DonorsListModels\AddDonorRecordViewModel.cs" />
+    <Compile Include="ViewModels\DonorsListModels\Donations\AddDonorRecordViewModel.cs" />
     <Compile Include="ViewModels\DonorsListModels\Donations\DonationListViewModel.cs" />
     <Compile Include="ViewModels\DonorsListModels\Donations\DonationViewModel.cs" />
     <Compile Include="ViewModels\DonorsListModels\DonorsListViewModel.cs" />
@@ -149,7 +149,7 @@
     <Compile Include="ViewModels\Common\BirthDateViewModel.cs" />
     <Compile Include="ViewModels\ApplicationViewModel.cs" />
     <Compile Include="ViewModels\Common\Gender\GenderViewModel.cs" />
-    <Compile Include="PersonViewModel.cs" />
+    <Compile Include="ViewModels\DonorsListModels\PersonViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

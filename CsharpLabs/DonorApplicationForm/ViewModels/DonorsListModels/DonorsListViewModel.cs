@@ -61,8 +61,6 @@ namespace DonorApplicationForm.ViewModels
             }
         }
 
-
-
         public int Count { get { return itemsFiltered.Count(); } }
 
         public string NameFilter
