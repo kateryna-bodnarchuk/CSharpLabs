@@ -96,13 +96,13 @@
                                         <TextBlock Text="New Donation" Style="{ThemeResource TitleTextBlockStyle}"/>
                                         <StackPanel Orientation="Horizontal" Margin="0,5,0,0">
                                             <TextBlock Text="At:" VerticalAlignment="Center"/>
-                                            <DatePicker Margin="5,0,0,0"/>
+                                            <DatePicker Margin="5,0,0,0" Date="{x:Bind ApplicationModel.DonorsList.ItemSelected.Donations.AddForm.At, Mode=TwoWay}"/>
                                         </StackPanel>
                                         <StackPanel Orientation="Horizontal" Margin="0,5,0,0">
                                             <TextBlock Text="Mililiters:" VerticalAlignment="Center"/>
-                                            <TextBox Text=" " Margin="5,0,0,0"/>
+                                            <TextBox Text="{x:Bind ApplicationModel.DonorsList.ItemSelected.Donations.AddForm.Mililiters, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Margin="5,0,0,0"/>
                                         </StackPanel>
-                                        <Button Content="Add" Margin="0,5,0,0" Width="75" HorizontalAlignment="Right"/>
+                                        <Button Content="Add" Margin="0,5,0,0" Width="75" HorizontalAlignment="Right" Click="{x:Bind ApplicationModel.DonorsList.ItemSelected.Donations.AddForm.Add}"/>
                                     </StackPanel>
                                 </Border>
                                 <TextBlock Text="Donations:" Margin="0,7,0,0" Style="{ThemeResource TitleTextBlockStyle}"/>

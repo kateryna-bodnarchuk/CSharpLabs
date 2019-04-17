@@ -128,7 +128,6 @@
     <Compile Include="DomainModel\DonationRecord.cs" />
     <Compile Include="DomainModel\Gender.cs" />
     <Compile Include="DomainModel\IPerson.cs" />
-    <Compile Include="DomainModel\MonostatePerson.cs" />
     <Compile Include="DomainModel\Person.cs" />
     <Compile Include="DomainModel\PersonNameComparer.cs" />
     <Compile Include="DomainModel\PersonSort.cs" />

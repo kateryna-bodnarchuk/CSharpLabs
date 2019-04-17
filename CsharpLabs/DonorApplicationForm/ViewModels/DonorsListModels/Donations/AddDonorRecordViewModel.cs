@@ -22,7 +22,12 @@ namespace DonorApplicationForm.ViewModels.DonorsListModels
 
         public void Add(object sender, RoutedEventArgs e)
         {
-            //var result = new DonationRecord()
+            var result = new DonationRecord(At.DateTime, double.Parse(Mililiters));
+
+            if (NewDonation != null)
+            {
+                NewDonation(result);
+            }
         }
 
     }
