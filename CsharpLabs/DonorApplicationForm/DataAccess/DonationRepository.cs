@@ -23,7 +23,6 @@ namespace DonorApplicationForm.DataAccess
 
                     command.ExecuteNonQuery();
                 }
-
             }
         }
 

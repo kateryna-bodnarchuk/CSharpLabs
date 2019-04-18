@@ -125,6 +125,7 @@
     <Compile Include="DataAccess\DonationRepositoryMock.cs" />
     <Compile Include="DataAccess\DonorRepository.cs" />
     <Compile Include="DataAccess\DonorRepositoryMock.cs" />
+    <Compile Include="DataAccess\EntityFramework\BloodBankDbContext.cs" />
     <Compile Include="DataAccess\GenderPersistance.cs" />
     <Compile Include="DataAccess\IDonationRepository.cs" />
     <Compile Include="DataAccess\IDonorRepository.cs" />
@@ -134,7 +135,6 @@
     <Compile Include="DomainModel\IPerson.cs" />
     <Compile Include="DomainModel\Person.cs" />
     <Compile Include="DomainModel\PersonNameComparer.cs" />
-    <Compile Include="DomainModel\PersonSort.cs" />
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
@@ -184,6 +184,9 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer">
+      <Version>2.2.4</Version>
+    </PackageReference>
     <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform">
       <Version>6.2.3</Version>
     </PackageReference>
