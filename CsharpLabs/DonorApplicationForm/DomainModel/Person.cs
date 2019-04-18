@@ -11,7 +11,7 @@ namespace DonorApplicationForm.DomainModel
         public Guid PersonId { get; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
-        public DateTimeOffset BirthDate { get; set; }
+        public DateTime BirthDate { get; set; }
         public Gender Gender { get; set; }
         public BloodGroup Group { get; set; }
 
@@ -20,7 +20,7 @@ namespace DonorApplicationForm.DomainModel
             Guid personId,
             string firstName, 
             string lastName,
-            DateTimeOffset birthDate,
+            DateTime birthDate,
             Gender gender, 
             BloodGroup group)
         {

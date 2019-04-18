@@ -18,7 +18,7 @@ namespace DonorApplicationForm.DataAccess
                 {
                     PersonId = personId,
                     At = record.At,
-                    Ml = record.Ml,
+                    Ml = record.Milliliters,
                 }
             );
         }
@@ -39,7 +39,12 @@ namespace DonorApplicationForm.DataAccess
         //    return result;
         }
 
-        public void Remove(Guid personId, DateTime at)
+        public void RemoveByPerson(Guid personId)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void RemoveByPersonAt(Guid personId, DateTime at)
         {
             for (int i = items.Count - 1; i >= 0; i--)
             {

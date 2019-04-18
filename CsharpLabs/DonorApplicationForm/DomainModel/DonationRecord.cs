@@ -9,12 +9,12 @@ namespace DonorApplicationForm.DomainModel
     public sealed class DonationRecord
     {
         public DateTime At { get; }
-        public double Ml { get; }
+        public double Milliliters { get; }
 
         public DonationRecord(DateTime at, double ml)
         {
             At = at;
-            Ml = ml;
+            Milliliters = ml;
         }
     }
 }

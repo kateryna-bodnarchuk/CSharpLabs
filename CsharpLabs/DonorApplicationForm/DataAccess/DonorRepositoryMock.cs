@@ -13,15 +13,15 @@ namespace DonorApplicationForm.DataAccess
         {
             new Person(
                 Guid.NewGuid(),"Anna", "Bilyk", 
-                new DateTimeOffset(1999, 7, 25, 0, 0, 0, TimeSpan.Zero), 
+                new DateTime(1999, 7, 25, 0, 0, 0), 
                 Gender.Female, BloodGroup.I),
             new Person(
                 Guid.NewGuid(),"Irina", "Bilyk",
-                new DateTimeOffset(1985, 6, 30, 0, 0, 0, TimeSpan.Zero),
+                new DateTime(1985, 6, 30, 0, 0, 0),
                 Gender.Female, BloodGroup.II),
             new Person(
                 Guid.NewGuid(),"Nick", "Jakson",
-                new DateTimeOffset(1972, 1, 1, 0, 0, 0, TimeSpan.Zero),
+                new DateTime(1972, 1, 1, 0, 0, 0),
                 Gender.Male, BloodGroup.IV)
         };
 

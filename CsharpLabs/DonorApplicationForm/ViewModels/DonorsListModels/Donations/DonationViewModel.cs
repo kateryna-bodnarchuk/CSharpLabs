@@ -8,7 +8,7 @@ namespace DonorApplicationForm.ViewModels
         public DonationViewModel(DonationRecord record)
         {
             this.Data = record;
-            Title = record.At.ToString() + ", " + record.Ml.ToString() + " ml";
+            Title = record.At.ToString() + ", " + record.Milliliters.ToString() + " ml";
         }
         public string Title { get; }
         public DonationRecord Data;

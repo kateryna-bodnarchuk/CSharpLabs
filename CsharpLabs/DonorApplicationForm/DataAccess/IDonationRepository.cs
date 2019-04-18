@@ -11,7 +11,8 @@ namespace DonorApplicationForm.DataAccess
     {
         List<DonationRecord> GetDonorRecords(Guid personId);
         void Add(Guid personId, DonationRecord record);
-        void Remove(Guid personId, DateTime at);
+        void RemoveByPersonAt(Guid personId, DateTime at);
+        void RemoveByPerson(Guid personId);
     }
 
 }

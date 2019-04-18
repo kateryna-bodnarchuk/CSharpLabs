@@ -13,13 +13,15 @@ namespace DonorApplicationForm.ViewModels
     public sealed class DonorsListViewModel : INotifyPropertyChanged
     {
         private readonly IDonorRepository donorRepository;
+        private readonly IDonationRepository donationRepository;
         private string nameFilter = string.Empty;
         private List<PersonViewModel> itemsFiltered;
         private PersonViewModel itemSelected;
 
         public DonorsListViewModel()
         {
-            this.donorRepository = new DonorRepositoryMock();
+            this.donorRepository = new DonorRepository();
+            this.donationRepository = new DonationRepository();
             this.BloodGroupFilter = new BloodGroupOptionalSelectionViewModel();
             this.BloodGroupFilter.ItemSelectedChanged += UpdateItemsFiltered;
             UpdateItemsFiltered();
@@ -100,8 +102,14 @@ namespace DonorApplicationForm.ViewModels
 
         private void OnItemRemoving(PersonViewModel item)
         {
-            this.donorRepository.Remove(item.Data.PersonId);
+            RemovePersonTransaction(item.Data.PersonId);
             UpdateItemsFiltered();
+        }
+
+        private void RemovePersonTransaction(Guid personId)
+        {
+            this.donationRepository.RemoveByPerson(personId);
+            this.donorRepository.Remove(personId);
         }
 
         private void UpdateItemsFiltered()

@@ -79,7 +79,7 @@ namespace DonorApplicationForm.ViewModels
                 personId: Guid.NewGuid(),
                 firstName: this.firstName, 
                 lastName: this.lastName, 
-                birthDate: this.BirthDate.Date, 
+                birthDate: this.BirthDate.Date.DateTime, 
                 gender: this.Gender.ItemSelected.Value, 
                 group: this.BloodGroup.ItemSelected.Value);
 

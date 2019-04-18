@@ -22,7 +22,7 @@ namespace DonorApplicationForm.ViewModels
             this.AddForm = new AddDonorRecordViewModel();
             this.AddForm.NewDonation += new Action<DonationRecord>(OnNewDonation);
             this.personId = personId;
-            this.donationRepository = new DonationRepositoryMock();
+            this.donationRepository = new DonationRepository();
 
             UpdateItems();
         }
@@ -58,7 +58,7 @@ namespace DonorApplicationForm.ViewModels
 
         private void OnItemRemoving(DonationViewModel item)
         {
-            this.donationRepository.Remove(personId, item.Data.At);
+            this.donationRepository.RemoveByPersonAt(personId, item.Data.At);
             UpdateItems();
         }
     }
