@@ -7,7 +7,7 @@ using DonorApplicationForm.DomainModel;
 
 namespace DonorApplicationForm.DataAccess
 {
-    public sealed class DonorRepositoryMock : IDonorRepository
+    public sealed class PersonRepositoryMock : IPersonRepository
     {
         private readonly List<Person> items = new List<Person>()
         {

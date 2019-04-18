@@ -123,12 +123,12 @@
     <Compile Include="DataAccess\BloodGroupPersistance.cs" />
     <Compile Include="DataAccess\DonationRepository.cs" />
     <Compile Include="DataAccess\DonationRepositoryMock.cs" />
-    <Compile Include="DataAccess\DonorRepository.cs" />
-    <Compile Include="DataAccess\DonorRepositoryMock.cs" />
+    <Compile Include="DataAccess\PersonRepository.cs" />
+    <Compile Include="DataAccess\PersonRepositoryMock.cs" />
     <Compile Include="DataAccess\EntityFramework\BloodBankDbContext.cs" />
     <Compile Include="DataAccess\GenderPersistance.cs" />
     <Compile Include="DataAccess\IDonationRepository.cs" />
-    <Compile Include="DataAccess\IDonorRepository.cs" />
+    <Compile Include="DataAccess\IPersonRepository.cs" />
     <Compile Include="DomainModel\BloodGroup.cs" />
     <Compile Include="DomainModel\DonationRecord.cs" />
     <Compile Include="DomainModel\Gender.cs" />

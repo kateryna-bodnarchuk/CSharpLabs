@@ -12,7 +12,7 @@ namespace DonorApplicationForm.ViewModels
 {
     public sealed class DonorsListViewModel : INotifyPropertyChanged
     {
-        private readonly IDonorRepository donorRepository;
+        private readonly IPersonRepository donorRepository;
         private readonly IDonationRepository donationRepository;
         private string nameFilter = string.Empty;
         private List<PersonViewModel> itemsFiltered;
@@ -20,7 +20,7 @@ namespace DonorApplicationForm.ViewModels
 
         public DonorsListViewModel()
         {
-            this.donorRepository = new DonorRepository();
+            this.donorRepository = new PersonRepository();
             this.donationRepository = new DonationRepository();
             this.BloodGroupFilter = new BloodGroupOptionalSelectionViewModel();
             this.BloodGroupFilter.ItemSelectedChanged += UpdateItemsFiltered;

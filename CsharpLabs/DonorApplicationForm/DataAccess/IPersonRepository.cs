@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace DonorApplicationForm.DataAccess
 {
-    public interface IDonorRepository
+    public interface IPersonRepository
     {
         List<Person> GetPersonList();
         void AddPerson(Person person);
