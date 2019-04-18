@@ -164,6 +164,7 @@
     <None Include="DonorApplicationForm_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Images\12pr_pmgh.png" />
     <Content Include="Images\Female.png" />
     <Content Include="Images\icons8-cancel-32.png" />
     <Content Include="Properties\Default.rd.xml" />
