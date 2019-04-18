@@ -1,4 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Logging.Console;
+using Microsoft.Extensions.Logging.Debug;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,8 +17,20 @@ namespace DonorApplicationForm.DataAccess.EntityFramework
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
+            optionsBuilder.UseLoggerFactory(MyLoggerFactory);
+
             optionsBuilder.UseSqlServer(BloodBankDbConnection.ConnectionString);
         }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+
+            modelBuilder.Entity<Donation>().HasKey(i => new { i.PersonId, i.At });
+        }
+
+        public static readonly LoggerFactory MyLoggerFactory
+    = new LoggerFactory(new[] { new DebugLoggerProvider() });
     }
 
     /// <summary>

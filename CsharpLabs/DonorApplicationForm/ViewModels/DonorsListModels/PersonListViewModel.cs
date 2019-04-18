@@ -22,7 +22,7 @@ namespace DonorApplicationForm.ViewModels.DonorsListModels
         public PersonListViewModel()
         {
             this.donorRepository = new PersonRepositoryAdo();
-            this.donationRepository = new DonationRepositoryAdo();
+            this.donationRepository = new DonationRepositoryEf();
             this.BloodGroupFilter = new BloodGroupOptionalSelectionViewModel();
             this.BloodGroupFilter.ItemSelectedChanged += UpdateItemsFiltered;
             UpdateItemsFiltered();

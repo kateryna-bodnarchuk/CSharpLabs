@@ -122,8 +122,10 @@
     <Compile Include="DataAccess\BloodBankDbConnection.cs" />
     <Compile Include="DataAccess\BloodGroupPersistance.cs" />
     <Compile Include="DataAccess\DonationRepositoryAdo.cs" />
+    <Compile Include="DataAccess\DonationRepositoryEf.cs" />
     <Compile Include="DataAccess\DonationRepositoryMock.cs" />
     <Compile Include="DataAccess\PersonRepositoryAdo.cs" />
+    <Compile Include="DataAccess\PersonRepositoryEf.cs" />
     <Compile Include="DataAccess\PersonRepositoryMock.cs" />
     <Compile Include="DataAccess\EntityFramework\BloodBankDbContext.cs" />
     <Compile Include="DataAccess\GenderPersistance.cs" />
@@ -186,6 +188,12 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer">
       <Version>2.2.4</Version>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Extensions.Logging.Console">
+      <Version>2.2.0</Version>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Extensions.Logging.Debug">
+      <Version>2.2.0</Version>
     </PackageReference>
     <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform">
       <Version>6.2.3</Version>

@@ -22,7 +22,7 @@ namespace DonorApplicationForm.ViewModels.DonorsListModels.Donations
             this.AddForm = new AddDonationViewModel();
             this.AddForm.NewDonation += new Action<Donation>(OnNewDonation);
             this.personId = personId;
-            this.donationRepository = new DonationRepositoryAdo();
+            this.donationRepository = new DonationRepositoryEf();
 
             UpdateItems();
         }
