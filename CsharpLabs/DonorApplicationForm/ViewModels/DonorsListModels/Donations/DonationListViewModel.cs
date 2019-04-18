@@ -19,21 +19,21 @@ namespace DonorApplicationForm.ViewModels
       
         public DonationListViewModel(Guid personId)
         {
-            this.AddForm = new AddDonorRecordViewModel();
-            this.AddForm.NewDonation += new Action<DonationRecord>(OnNewDonation);
+            this.AddForm = new AddDonationViewModel();
+            this.AddForm.NewDonation += new Action<Donation>(OnNewDonation);
             this.personId = personId;
             this.donationRepository = new DonationRepository();
 
             UpdateItems();
         }
 
-        public AddDonorRecordViewModel AddForm { get; }
+        public AddDonationViewModel AddForm { get; }
 
         public List<DonationViewModel> Items => items;
 
         public event PropertyChangedEventHandler PropertyChanged;
 
-        private void OnNewDonation(DonationRecord record)
+        private void OnNewDonation(Donation record)
         {
             this.donationRepository.Add(personId, record);
             UpdateItems();
@@ -49,7 +49,7 @@ namespace DonorApplicationForm.ViewModels
             }
         }
 
-        private DonationViewModel NewDonationViewModel(DonationRecord record)
+        private DonationViewModel NewDonationViewModel(Donation record)
         {
             var model = new DonationViewModel(record);
             model.Removing += new Action<DonationViewModel>(OnItemRemoving);

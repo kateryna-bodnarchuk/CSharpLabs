@@ -11,7 +11,7 @@ namespace DonorApplicationForm.DataAccess
     {
         private readonly List<DbRecord> items = new List<DbRecord>();
 
-        public void Add(Guid personId, DonationRecord record)
+        public void Add(Guid personId, Donation record)
         {
             this.items.Add(
                 new DbRecord
@@ -23,10 +23,10 @@ namespace DonorApplicationForm.DataAccess
             );
         }
 
-        public List<DonationRecord> GetDonorRecords(Guid personId)
+        public List<Donation> GetDonorRecords(Guid personId)
         {
             return items.Where(i => i.PersonId == personId)
-                .Select(r => new DonationRecord(r.At, r.Ml)).ToList();
+                .Select(r => new Donation(r.At, r.Ml)).ToList();
 
         //    var result = new List<DonationRecord>();
         //    foreach (DbRecord r in items)

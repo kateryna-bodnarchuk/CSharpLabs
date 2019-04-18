@@ -8,9 +8,9 @@ using Windows.UI.Xaml;
 
 namespace DonorApplicationForm.ViewModels.DonorsListModels
 {
-    public sealed class AddDonorRecordViewModel
+    public sealed class AddDonationViewModel
     {
-        public AddDonorRecordViewModel()
+        public AddDonationViewModel()
         {
             At = DateTimeOffset.Now;
             Mililiters = 100.ToString();
@@ -18,11 +18,11 @@ namespace DonorApplicationForm.ViewModels.DonorsListModels
         public DateTimeOffset At { get; set; }
         public string Mililiters { get; set; }
 
-        public event Action<DonationRecord> NewDonation;
+        public event Action<Donation> NewDonation;
 
         public void Add(object sender, RoutedEventArgs e)
         {
-            var result = new DonationRecord(At.DateTime, double.Parse(Mililiters));
+            var result = new Donation(At.DateTime, double.Parse(Mililiters));
 
             if (NewDonation != null)
             {

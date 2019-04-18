@@ -10,7 +10,7 @@ namespace DonorApplicationForm.DataAccess
 {
     public sealed class DonationRepository : IDonationRepository
     {
-        public void Add(Guid personId, DonationRecord record)
+        public void Add(Guid personId, Donation record)
         {
             using (var connection = BloodBankDbConnection.NewConnectionOpened())
             {
@@ -26,9 +26,9 @@ namespace DonorApplicationForm.DataAccess
             }
         }
 
-        public List<DonationRecord> GetDonorRecords(Guid personId)
+        public List<Donation> GetDonorRecords(Guid personId)
         {
-            var result = new List<DonationRecord>();
+            var result = new List<Donation>();
             using (var connection = BloodBankDbConnection.NewConnectionOpened())
             {
                 using (var command = connection.CreateCommand())
@@ -41,7 +41,7 @@ namespace DonorApplicationForm.DataAccess
                         {
                             DateTime at = (DateTime)reader["At"];
                             double milliliters = (double)reader["Milliliters"];
-                            result.Add(new DonationRecord(at, milliliters));
+                            result.Add(new Donation(at, milliliters));
                         }
                     }
                 }

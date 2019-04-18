@@ -130,7 +130,7 @@
     <Compile Include="DataAccess\IDonationRepository.cs" />
     <Compile Include="DataAccess\IPersonRepository.cs" />
     <Compile Include="DomainModel\BloodGroup.cs" />
-    <Compile Include="DomainModel\DonationRecord.cs" />
+    <Compile Include="DomainModel\Donation.cs" />
     <Compile Include="DomainModel\Gender.cs" />
     <Compile Include="DomainModel\IPerson.cs" />
     <Compile Include="DomainModel\Person.cs" />
@@ -144,7 +144,7 @@
     <Compile Include="ViewModels\Common\BloodGroup\BloodGroupOptionalSelectionViewModel.cs" />
     <Compile Include="ViewModels\Common\BloodGroup\BloodGroupRequiredViewModel.cs" />
     <Compile Include="ViewModels\Common\BloodGroup\BloodGroupRequiredSelectionViewModel.cs" />
-    <Compile Include="ViewModels\DonorsListModels\Donations\AddDonorRecordViewModel.cs" />
+    <Compile Include="ViewModels\DonorsListModels\Donations\AddDonationViewModel.cs" />
     <Compile Include="ViewModels\DonorsListModels\Donations\DonationListViewModel.cs" />
     <Compile Include="ViewModels\DonorsListModels\Donations\DonationViewModel.cs" />
     <Compile Include="ViewModels\DonorsListModels\DonorsListViewModel.cs" />

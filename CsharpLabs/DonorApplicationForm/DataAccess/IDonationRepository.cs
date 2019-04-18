@@ -9,8 +9,8 @@ namespace DonorApplicationForm.DataAccess
 {
     interface IDonationRepository
     {
-        List<DonationRecord> GetDonorRecords(Guid personId);
-        void Add(Guid personId, DonationRecord record);
+        List<Donation> GetDonorRecords(Guid personId);
+        void Add(Guid personId, Donation record);
         void RemoveByPersonAt(Guid personId, DateTime at);
         void RemoveByPerson(Guid personId);
     }

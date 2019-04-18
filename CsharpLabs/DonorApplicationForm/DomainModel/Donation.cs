@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace DonorApplicationForm.DomainModel
 {
-    public sealed class DonationRecord
+    public sealed class Donation
     {
         public DateTime At { get; }
         public double Milliliters { get; }
 
-        public DonationRecord(DateTime at, double ml)
+        public Donation(DateTime at, double ml)
         {
             At = at;
             Milliliters = ml;
