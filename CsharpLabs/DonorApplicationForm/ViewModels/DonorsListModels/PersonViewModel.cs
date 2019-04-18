@@ -1,4 +1,5 @@
 ﻿using DonorApplicationForm.DomainModel;
+using DonorApplicationForm.ViewModels.DonorsListModels.Donations;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -7,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Windows.UI.Xaml;
 
-namespace DonorApplicationForm.ViewModels
+namespace DonorApplicationForm.ViewModels.DonorsListModels
 {
     public class PersonViewModel
     {

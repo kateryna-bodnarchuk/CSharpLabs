@@ -6,7 +6,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
 
-namespace DonorApplicationForm.ViewModels
+namespace DonorApplicationForm.ViewModels.DonorsListModels.Donations
 {
     /// <summary>
     /// Agregates donations by person and provides its editing.

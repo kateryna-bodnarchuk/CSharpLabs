@@ -2,7 +2,9 @@
     x:Class="DonorApplicationForm.MainPage"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:DonorApplicationForm_ViewModels="using:DonorApplicationForm.ViewModels"
+    xmlns:DonorApplicationForm_ViewModels_DonorsListModels="using:DonorApplicationForm.ViewModels.DonorsListModels"
+    xmlns:DonorApplicationForm_ViewModels_Common_GenderModels="using:DonorApplicationForm.ViewModels.Common.GenderModels"
+    xmlns:DonorApplicationForm_ViewModels_Common_BloodGroupModels="using:DonorApplicationForm.ViewModels.Common.BloodGroupModels"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
@@ -25,7 +27,7 @@
                     <TextBox Header="Last Name" x:Name="LastName" Margin="0,10,0,0" HorizontalAlignment="Stretch" Text="{x:Bind ApplicationModel.AddPerson.LastName, UpdateSourceTrigger=LostFocus, Mode=TwoWay}" />
                     <ComboBox Header="Gender" PlaceholderText="Select" Width="200" ItemsSource="{x:Bind ApplicationModel.AddPerson.Gender.ItemList}" SelectedItem="{x:Bind ApplicationModel.AddPerson.Gender.ItemSelected, Mode=TwoWay}" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="0,10,0,0">
                         <ComboBox.ItemTemplate>
-                            <DataTemplate x:DataType="DonorApplicationForm_ViewModels:GenderViewModel">
+                            <DataTemplate x:DataType="DonorApplicationForm_ViewModels_Common_GenderModels:GenderViewModel">
                                 <StackPanel Orientation="Horizontal">
                                     <Image Source="/Images/Female.png" Width="16" Height="16" Visibility="{x:Bind FemaleIconVisible}"/>
                                     <TextBlock Text="{x:Bind Title}" VerticalAlignment="Center" Margin="5,0,0,0"/>
@@ -36,7 +38,7 @@
                     <DatePicker Header="Date of Birth" HorizontalAlignment="Left" Margin="0,10,0,0" VerticalAlignment="Center" Date="{x:Bind ApplicationModel.AddPerson.BirthDate.Date, Mode=TwoWay}" MinYear="{x:Bind ApplicationModel.AddPerson.BirthDate.MinValue}" MaxYear="{x:Bind ApplicationModel.AddPerson.BirthDate.MaxValue}"/>
                     <ComboBox Header="Blood Group" PlaceholderText="Select" Width="200" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="0,10,0,0" ItemsSource="{x:Bind ApplicationModel.AddPerson.BloodGroup.ItemList}" SelectedItem="{x:Bind ApplicationModel.AddPerson.BloodGroup.ItemSelected, Mode=TwoWay}">
                         <ComboBox.ItemTemplate>
-                            <DataTemplate x:DataType="DonorApplicationForm_ViewModels:BloodGroupRequiredViewModel">
+                            <DataTemplate x:DataType="DonorApplicationForm_ViewModels_Common_BloodGroupModels:BloodGroupRequiredViewModel">
                                 <StackPanel Orientation="Horizontal">
                                     <TextBlock Text="{x:Bind Title}"/>
                                 </StackPanel>
@@ -70,7 +72,7 @@
                     </Grid.ColumnDefinitions>
                     <ListView Grid.Column="0" ItemsSource="{x:Bind ApplicationModel.DonorsList.Items, Mode=OneWay}" SelectedItem="{x:Bind ApplicationModel.DonorsList.ItemSelected,Mode=TwoWay}">
                         <ListView.ItemTemplate>
-                            <DataTemplate x:DataType="DonorApplicationForm_ViewModels:PersonViewModel">
+                            <DataTemplate x:DataType="DonorApplicationForm_ViewModels_DonorsListModels:PersonViewModel">
                                 <StackPanel Orientation="Horizontal">
                                     <TextBlock Text="{x:Bind Title}" VerticalAlignment="Center"/>
                                     <Button Margin="5,0,0,0" Click="{x:Bind Remove}">

@@ -7,7 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Windows.UI.Xaml;
 
-namespace DonorApplicationForm.ViewModels
+namespace DonorApplicationForm.ViewModels.Common.GenderModels
 {
     public sealed class GenderViewModel : INotifyPropertyChanged
     {

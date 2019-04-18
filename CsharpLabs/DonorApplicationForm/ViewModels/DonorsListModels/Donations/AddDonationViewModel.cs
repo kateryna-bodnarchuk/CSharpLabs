@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Windows.UI.Xaml;
 
-namespace DonorApplicationForm.ViewModels.DonorsListModels
+namespace DonorApplicationForm.ViewModels.DonorsListModels.Donations
 {
     public sealed class AddDonationViewModel
     {

@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DonorApplicationForm.ViewModels
+namespace DonorApplicationForm.ViewModels.Common.BloodGroupModels
 {
     /// <summary>
     /// Презентаційна модель аналогічна до <see cref="BloodGroupRequiredViewModel"/>

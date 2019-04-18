@@ -6,9 +6,10 @@ using System.Text;
 using System.Threading.Tasks;
 using DonorApplicationForm.DataAccess;
 using DonorApplicationForm.DomainModel;
+using DonorApplicationForm.ViewModels.Common.BloodGroupModels;
 using Windows.UI.Xaml;
 
-namespace DonorApplicationForm.ViewModels
+namespace DonorApplicationForm.ViewModels.DonorsListModels
 {
     public sealed class DonorsListViewModel : INotifyPropertyChanged
     {

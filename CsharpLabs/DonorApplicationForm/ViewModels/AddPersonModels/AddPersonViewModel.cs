@@ -1,4 +1,6 @@
 ﻿using DonorApplicationForm.DomainModel;
+using DonorApplicationForm.ViewModels.Common.BloodGroupModels;
+using DonorApplicationForm.ViewModels.Common.GenderModels;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;

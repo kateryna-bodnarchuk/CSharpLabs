@@ -1,4 +1,5 @@
 ﻿using DonorApplicationForm.DomainModel;
+using DonorApplicationForm.ViewModels.DonorsListModels;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;

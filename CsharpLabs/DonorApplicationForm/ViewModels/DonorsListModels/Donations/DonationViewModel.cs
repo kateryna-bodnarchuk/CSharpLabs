@@ -1,7 +1,7 @@
 ﻿using System;
 using DonorApplicationForm.DomainModel;
 
-namespace DonorApplicationForm.ViewModels
+namespace DonorApplicationForm.ViewModels.DonorsListModels.Donations
 {
     public class DonationViewModel
     {
