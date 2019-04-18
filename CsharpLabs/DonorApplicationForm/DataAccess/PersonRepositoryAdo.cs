@@ -8,7 +8,7 @@ using DonorApplicationForm.DomainModel;
 
 namespace DonorApplicationForm.DataAccess
 {
-    public sealed class PersonRepository : IPersonRepository
+    public sealed class PersonRepositoryAdo : IPersonRepository
     {
 
         public void AddPerson(Person person)

@@ -11,7 +11,7 @@ using Windows.UI.Xaml;
 
 namespace DonorApplicationForm.ViewModels.DonorsListModels
 {
-    public sealed class DonorsListViewModel : INotifyPropertyChanged
+    public sealed class PersonListViewModel : INotifyPropertyChanged
     {
         private readonly IPersonRepository donorRepository;
         private readonly IDonationRepository donationRepository;
@@ -19,10 +19,10 @@ namespace DonorApplicationForm.ViewModels.DonorsListModels
         private List<PersonViewModel> itemsFiltered;
         private PersonViewModel itemSelected;
 
-        public DonorsListViewModel()
+        public PersonListViewModel()
         {
-            this.donorRepository = new PersonRepository();
-            this.donationRepository = new DonationRepository();
+            this.donorRepository = new PersonRepositoryAdo();
+            this.donationRepository = new DonationRepositoryAdo();
             this.BloodGroupFilter = new BloodGroupOptionalSelectionViewModel();
             this.BloodGroupFilter.ItemSelectedChanged += UpdateItemsFiltered;
             UpdateItemsFiltered();

@@ -17,7 +17,7 @@ namespace DonorApplicationForm.ViewModels
             this.AddPerson = new AddPersonViewModel();
             this.AddPerson.NewPerson += new Action<Person>(OnNewPerson);
 
-            this.DonorsList = new DonorsListViewModel();
+            this.DonorsList = new PersonListViewModel();
         }
 
         private void OnNewPerson(Person person)
@@ -27,6 +27,6 @@ namespace DonorApplicationForm.ViewModels
 
         public AddPersonViewModel AddPerson { get; }
 
-        public DonorsListViewModel DonorsList { get; }
+        public PersonListViewModel DonorsList { get; }
     }
 }

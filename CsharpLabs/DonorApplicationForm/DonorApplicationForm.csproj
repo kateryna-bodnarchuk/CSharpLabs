@@ -121,9 +121,9 @@
     </Compile>
     <Compile Include="DataAccess\BloodBankDbConnection.cs" />
     <Compile Include="DataAccess\BloodGroupPersistance.cs" />
-    <Compile Include="DataAccess\DonationRepository.cs" />
+    <Compile Include="DataAccess\DonationRepositoryAdo.cs" />
     <Compile Include="DataAccess\DonationRepositoryMock.cs" />
-    <Compile Include="DataAccess\PersonRepository.cs" />
+    <Compile Include="DataAccess\PersonRepositoryAdo.cs" />
     <Compile Include="DataAccess\PersonRepositoryMock.cs" />
     <Compile Include="DataAccess\EntityFramework\BloodBankDbContext.cs" />
     <Compile Include="DataAccess\GenderPersistance.cs" />
@@ -147,7 +147,7 @@
     <Compile Include="ViewModels\DonorsListModels\Donations\AddDonationViewModel.cs" />
     <Compile Include="ViewModels\DonorsListModels\Donations\DonationListViewModel.cs" />
     <Compile Include="ViewModels\DonorsListModels\Donations\DonationViewModel.cs" />
-    <Compile Include="ViewModels\DonorsListModels\DonorsListViewModel.cs" />
+    <Compile Include="ViewModels\DonorsListModels\PersonListViewModel.cs" />
     <Compile Include="ViewModels\Common\GenderModels\GenderSelectionViewModel.cs" />
     <Compile Include="ViewModels\Common\BirthDateViewModel.cs" />
     <Compile Include="ViewModels\ApplicationViewModel.cs" />
